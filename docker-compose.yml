@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./src
+    ports:
+      - 8002:8000
+    environment:
+      - DATABASE_URL=postgresql://hello_fastapi:hello_fastapi@db/facebook_posts
+  db:
+    image: postgres:13-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=hello_fastapi
+      - POSTGRES_PASSWORD=hello_fastapi
+      - POSTGRES_DB=facebook_posts
+
+volumes:
+  postgres_data:

@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+facebook-scraper
+pytest
+requests
+
+asyncpg
+databases
+psycopg2-binary
+SQLAlchemy
+beautifulsoup4
